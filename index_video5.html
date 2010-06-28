@@ -1,0 +1,40 @@
+<html>
+
+	<head>
+		
+		<style type="text/css">
+
+		</style>
+		
+		<script src="jquery-1.4.2.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(function() {
+				var size = $('#nav li').size();
+				
+				$('#add').click(function() {
+					$('<li>' + ++size + '</li>').appendTo("#nav");
+					size = $('#nav li').size();
+				});
+				
+				$('#remove').click(function() {
+					$('#nav li:last').remove('li');
+					size = $('#nav li').size();
+				});
+			});
+		</script>
+		
+	</head>
+	
+	<body> 
+		<ul id="nav">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		<a id="add" href="#">Add List Item</a>
+		<br>
+		<a id="remove" href="#">Remove List Item</a>
+	</body> 
+	
+</html>
