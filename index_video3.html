@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<script src="jquery-1.4.2.min.js" type="text/javascript"></script>
+		<style type="text/css">
+			#box
+			{
+				background: blue;
+				width: 300px;
+				height: 300px;
+				position: relative;
+			}
+
+		</style>
+		
+		<script type="text/javascript">
+			$(function() {
+				$('#box').click(function(){
+					$(this).animate({"left" : "300px", }, 4000).animate({"width" : "50px"});
+					
+				});
+			});
+		</script>
+	</head>
+	<body> 
+	
+		<div id="box">
+		</div>
+
+	</body> 
+</html>
