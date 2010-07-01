@@ -1,0 +1,44 @@
+<html>
+
+	<head>
+		
+		<style type="text/css">
+			div { border: 1px solid black; width: 250px; height: 50px; font-size: 1.5em; }
+			.item { position: relative; }
+			.detail { 
+				border: 1px solid red;
+				background-color: green;
+				position: absolute; 
+				top: 0px; 
+				left: 0px; 
+				height: 300px;
+			}
+		</style>
+		
+		<script src="jquery-1.4.2.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(function() {
+				
+				var $detail = $('.detail')
+				var $item = $detail.closest('.item')
+				
+				var topOffset = $item.position().top
+				var leftOffset = $item.position().left
+				
+				$detail.position({ top: topOffset, left: leftOffset })
+			})
+		</script>
+		
+	</head>
+	
+	<body> 
+		<div style="border: 1px dotted blue;">
+		<div class="item">
+			Item
+			<div class="detail">DEETS</div>
+		</div>
+		</div>
+	
+	</body> 
+	
+</html>
