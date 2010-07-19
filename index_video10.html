@@ -9,14 +9,21 @@
 		<script src="jquery-1.4.2.min.js" type="text/javascript"></script>
 		<script type="text/javascript">
 			$(function() {
-			
+				$('<div id="info" />').load('index_video10_a.html #movies', function() {
+					$(this).hide()
+						   .appendTo('#container')
+						   .slideDown(1000);
+				});
 			});
 		</script>
 		
 	</head>
 	
 	<body> 
-		
+		<div id="container">
+			<h1>My Favorite Movies</h1>
+			
+		</div>
 	
 	</body> 
 	

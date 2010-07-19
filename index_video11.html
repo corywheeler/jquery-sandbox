@@ -1,0 +1,55 @@
+<html>
+
+	<head>
+		
+		<style type="text/css">
+			a img {
+				border: none;
+			}
+			
+			#largeImage {
+				position: absolute;
+				padding: .5em;
+				background: #e3e3e3
+				border: 1px solid #BFBFBF
+			}
+		</style>
+		
+		<script src="jquery-1.4.2.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(function() {
+				var offsetY = 10;
+				var offsetX = 20;
+			
+				$('a').hover(function(e) {
+					//mouse on
+					
+					var href = $(this).attr('href');
+					$('<img id="largeImage" src="' + href + '" alt="image"/>')
+					.css('top', e.pageY + offsetY)
+					.css('left', e.pageX + offsetX)
+					.appendTo('body');
+				}, function() {
+					//mouse off
+					$('#largeImage').remove();
+				})
+				
+				$('a').mousemove(function(e) {
+					$('#largeImage')
+						.css('top', e.pageY + offsetY)
+						.css('left', e.pageX + offsetX);
+				});
+				
+			});
+		</script>
+		
+	</head>
+	
+	<body> 
+		<a href="one.jpg"><image src="oneTN.jpg" alt="some image" /></a>
+		<a href="two.jpg"><image src="twoTN.jpg" alt="some image" /></a>
+		<a href="three.jpg"><image src="threeTN.jpg" alt="some image" /></a>
+	
+	</body> 
+	
+</html>

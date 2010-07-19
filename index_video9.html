@@ -1,0 +1,39 @@
+<html>
+
+	<head>
+		
+		<style type="text/css">
+			
+		</style>
+		
+		<script src="jquery-1.4.2.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(function() {
+				
+				$('a').click(function() {
+					var originalSize = $('p').css('font-size');
+					var sizeValue = parseFloat(originalSize, 10);
+					var unitOfMeasure = originalSize.slice(-2);
+				
+					if($(this).attr('id') == 'larger')
+						$('p').css('font-size', sizeValue * 1.4 + unitOfMeasure);
+					else
+						$('p').css('font-size', sizeValue / 1.4 + unitOfMeasure);
+				})
+				
+				
+			})
+		</script>
+		
+	</head>
+	
+	<body> 
+		<a id="larger" href="#">Larger</a>
+		<br/>
+		<a id="smaller" href="#">Smaller</a>
+		
+		<p>A long block of gibberish text.</p>
+	
+	</body> 
+	
+</html>
